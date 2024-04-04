@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 
-export class Groups extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Groups</h1>
+        <h1>Home</h1>
+        <h1>Featured player</h1>
       </div>
     )
   }
 }
-
-export default Groups;
-
-

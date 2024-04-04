@@ -1,13 +1,28 @@
 // import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComp from './components/NavbarComp';
-// import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarComp from "./components/NavbarComp";
+import { Component } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Profile from "./components/Profile";
+import Groups from "./components/Groups";
+import Home from "./components/Home";
 
 const App = () => {
   return (
     <>
-      <h1>Featured player</h1>
-      <NavbarComp/>
+    <NavbarComp/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Groups" element={<Groups />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
+        </Routes>
+      </BrowserRouter>
+
+      
+      
+      
     </>
   );
 };

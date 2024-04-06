@@ -149,6 +149,10 @@ button:focus-visible {
   cursor: pointer;
 }
 
+.gray{
+  background: rgb(216, 216, 216);
+  color: #213547;
+}
 
 
 

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./components/Profile";
 import Groups from "./components/Groups";
 import Home from "./components/Home";
+import Modal from "./components/Modal";
 import LoginSignUp from "./components/LoginSignUp/LoginSignUp";
 
 
@@ -25,7 +26,7 @@ const App = () => {
       <LoginSignUp/>
       
       
-      
+    <Modal />
     </>
   );
 };

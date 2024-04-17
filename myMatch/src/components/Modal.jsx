@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useGlobalContext } from "../state/context.jsx"
 
 import emailIcon from "./assets/email.png";
@@ -9,6 +9,8 @@ import profileIcon from "./assets/person.png";
 export default function Modal(){
   const {isModalActive, setIsModalActive, caller} = useGlobalContext()
   const [action, setAction] = useState("Sign Up")
+  const emailRef = useRef()
+  const passwordRef = useRef()
 
   function handleSignup(e){
     e.preventDefault()
@@ -69,18 +71,18 @@ export default function Modal(){
           </form>
       </div>
       
-      {action ==="Sign Up"? <></>:
+      {action ==="Log In"? <></>:
         <div className="forgot-password">
           Forgot password? <span>click here</span>
         </div>
       }
       <div className="submit-container">
-          <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
+          {/* <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
             Sign Up
-          </div>
-          {/* <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
-            Log in
           </div> */}
+          <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
+            Log in
+          </div>
       </div>
     </div>
                      </div> 
@@ -91,7 +93,7 @@ export default function Modal(){
         <div className="logText">SIgn up</div>
         <div className="underline"></div>
       </div>
-
+{/* SIGN UP   -------- */}
 
       <form id="signup-form">
       <div className="logInputs">
@@ -104,12 +106,12 @@ export default function Modal(){
 
           <div className="logInput">
             <img src={emailIcon} alt="" />
-            <input type="email" id="signup-email" placeholder="email" required />
+            <input type="email" id="signup-email" ref={emailRef} placeholder="email" required />
           </div>
           
           <div className="logInput">
             <img src={passwordIcon} alt="" />
-            <input type="password" id="signup-password" placeholder="password" required />
+            <input type="password" id="signup-password" ref={passwordRef} placeholder="password" required />
           </div>        
       </div>
       
@@ -119,12 +121,12 @@ export default function Modal(){
         </div>
       }
         <div className="submit-container">
-            {/* <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
+            <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
               Sign Up
-            </div> */}
-            <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
-              Log in
             </div>
+            {/* <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
+              Log in
+            </div> */}
         </div>
       </form>
     </div>

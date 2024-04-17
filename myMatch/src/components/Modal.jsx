@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useGlobalContext } from "../state/context.jsx"
-
+import { useAuth } from "../contexts/AuthContext.jsx";
 import emailIcon from "./assets/email.png";
 import passwordIcon from "./assets/email.png";
 import profileIcon from "./assets/person.png";
@@ -11,6 +11,13 @@ export default function Modal(){
   const [action, setAction] = useState("Sign Up")
   const emailRef = useRef()
   const passwordRef = useRef()
+  const {signup} = useAuth()
+
+  function handleSubmit(e){
+    e.preventDefault()
+
+    signup(emailRef.current.value, passwordRef.current.value)
+  }
 
   function handleSignup(e){
     e.preventDefault()

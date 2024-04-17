@@ -9,10 +9,12 @@ import Groups from "./components/Groups";
 import Home from "./components/Home";
 import Modal from "./components/Modal";
 import LoginSignUp from "./components/LoginSignUp/LoginSignUp";
+import { AuthProvider } from "./contexts/AuthContext";
 
 
 const App = () => {
   return (
+    <AuthProvider>
     <>
     <NavbarComp/>
       <BrowserRouter>
@@ -28,6 +30,7 @@ const App = () => {
       
     <Modal />
     </>
+    </AuthProvider>
   );
 };
 

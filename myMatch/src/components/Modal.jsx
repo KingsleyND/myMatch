@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext.jsx";
 import emailIcon from "./assets/email.png";
 import passwordIcon from "./assets/email.png";
 import profileIcon from "./assets/person.png";
+import { Alert } from "react-bootstrap";
 
 
 export default function Modal(){
@@ -11,12 +12,27 @@ export default function Modal(){
   const [action, setAction] = useState("Sign Up")
   const emailRef = useRef()
   const passwordRef = useRef()
-  const {signup} = useAuth()
+  const {signup, currentUser} = useAuth()
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
 
-    signup(emailRef.current.value, passwordRef.current.value)
+    // if(passwordRef.current.value !== passwordConfirmRef.current.value){
+    //   return  setError("passwords do not match")
+    // }
+
+    try{
+      setError("")
+      setLoading(true)
+      await signup(emailRef.current.value, passwordRef.current.value)
+    }catch{
+      setError("Failed to create an account")
+    }
+    setLoading(false)
+
+    
   }
 
   function handleSignup(e){
@@ -98,11 +114,13 @@ export default function Modal(){
                     <div className="logContainer" id="logContainer">
       <div className="logHeader">
         <div className="logText">SIgn up</div>
+        {currentUser && currentUser.email}
+        {error && <Alert variant="danger">{error}</Alert>}
         <div className="underline"></div>
       </div>
 {/* SIGN UP   -------- */}
 
-      <form id="signup-form">
+      <form id="signup-form" onSubmit={handleSubmit}>
       <div className="logInputs">
         {action ==="Log in"? <></>:
         <div className="logInput">
@@ -128,9 +146,9 @@ export default function Modal(){
         </div>
       }
         <div className="submit-container">
-            <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
-              Sign Up
-            </div>
+            <button disabled={loading} className="logSubmit" onClick={handleSignup} type="submit">
+              Sign Up.
+            </button>
             {/* <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
               Log in
             </div> */}

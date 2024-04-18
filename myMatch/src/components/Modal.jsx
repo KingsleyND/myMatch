@@ -18,11 +18,11 @@ export default function Modal(){
 
   async function handleSubmit(e){
     e.preventDefault()
-
+   
     // if(passwordRef.current.value !== passwordConfirmRef.current.value){
     //   return  setError("passwords do not match")
     // }
-
+console.log("emailRef.current.value: ", emailRef.current.value)
     try{
       setError("")
       setLoading(true)
@@ -32,15 +32,18 @@ export default function Modal(){
     }
     setLoading(false)
 
+
     
-  }
-
-  function handleSignup(e){
-    e.preventDefault()
-
-    setAction("Sign Up")
+    // setAction("Sign Up")
     setIsModalActive(true)
   }
+
+  // function handleSignup(e){
+  //   e.preventDefault()
+
+  //   setAction("Sign Up")
+  //   setIsModalActive(true)
+  // }
 
   function handleLogin(e){
     e.preventDefault()
@@ -64,6 +67,7 @@ export default function Modal(){
               </button>
 
               {
+                // LOG IN
                 caller === "login" ? 
                   <div>Login content
                     
@@ -103,9 +107,10 @@ export default function Modal(){
           {/* <div className={action === "Log in"? "logSubmit gray": "logSubmit"} onClick={handleSignup}>
             Sign Up
           </div> */}
-          <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>
-            Log in
-          </div>
+          {/* onClick={handleLogin} */}
+          <button className="logSubmit" >
+            Log in.
+          </button>
       </div>
     </div>
                      </div> 
@@ -115,6 +120,7 @@ export default function Modal(){
       <div className="logHeader">
         <div className="logText">SIgn up</div>
         {currentUser && currentUser.email}
+        {console.log(currentUser)}
         {error && <Alert variant="danger">{error}</Alert>}
         <div className="underline"></div>
       </div>
@@ -146,7 +152,7 @@ export default function Modal(){
         </div>
       }
         <div className="submit-container">
-            <button disabled={loading} className="logSubmit" onClick={handleSignup} type="submit">
+            <button disabled={loading} className="logSubmit"  type="submit">
               Sign Up.
             </button>
             {/* <div className={action === "Sign Up"? "logSubmit gray": "logSubmit"} onClick={handleLogin}>

@@ -14,23 +14,27 @@ import { AuthProvider } from "./contexts/AuthContext";
 
 const App = () => {
   return (
-    <AuthProvider>
+    
     <>
+    
     <NavbarComp/>
       <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/Home" element={<Home />}></Route>
           <Route path="/Groups" element={<Groups />}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
           
         </Routes>
+        <Modal />
+    </AuthProvider>
       </BrowserRouter>
       {/* <LoginSignUp/> */}
       
       
-    <Modal />
+    
     </>
-    </AuthProvider>
+    
   );
 };
 

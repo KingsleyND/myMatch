@@ -16,7 +16,7 @@ Fixing Login issues: My primary focus was on fixing login component issues. This
 * What are you going to do in the next 24 hours to help the Development Team reach the Sprint Goal?
 Front-End Improvements: I plan to improve the front-end user interface  to increase usability and visual appeal.
 Matchmaking Algorithm Changes: Along with front-end enhancements, I intend to modify the matchmaking algorithm to improve its efficiency and accuracy.
-Production Deployment: I'll also boot up the live production link.
+Production Deployment: I'll also boot up the live production link. Test cases will also be made
 * Do you see any impediments to you or the Development Team meeting the Sprint Goals? What are the obstacles? What is your hindrance removal plan?
 CI System Issues: The continuous integration (CI) system may cause problems because of to its setup or configuration. This could cause delays in deployment or integration.
 Impediment Removal Plan: To address this, I plan to use GitLab for CI/CD, resulting in smoother integration and deployment. This strategy should assist handle any CI difficulties and keep the sprint on track.

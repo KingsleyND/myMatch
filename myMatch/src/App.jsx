@@ -12,6 +12,7 @@ import LoginSignUp from "./components/LoginSignUp/LoginSignUp";
 import { AuthProvider } from "./contexts/AuthContext";
 
 
+
 const App = () => {
   return (
     
@@ -20,6 +21,14 @@ const App = () => {
     <NavbarComp/>
       <BrowserRouter>
       <AuthProvider>
+        {/* <Router>
+          <Switch>
+            <Route path="/signup"></Route>
+          </Switch>
+        </Router> */}
+
+
+
         <Routes>
           <Route path="/Home" element={<Home />}></Route>
           <Route path="/Groups" element={<Groups />}></Route>

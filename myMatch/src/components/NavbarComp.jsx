@@ -18,11 +18,11 @@ export default function NavbarComp () {
     setIsModalActive(true)
   }
 
-  function handleProfile(e){
-    e.preventDefault()
-    setCaller("profile")
-    setIsModalActive(true)
-  }
+  // function handleProfile(e){
+  //   e.preventDefault()
+  //   setCaller("profile")
+  //   setIsModalActive(true)
+  // }
 
 
     return (
@@ -36,9 +36,9 @@ export default function NavbarComp () {
           <Nav className="me-auto" >
             <Nav.Link href='/Home'>Home</Nav.Link>
             <Nav.Link href='/Groups'>Groups</Nav.Link>
-            <Nav.Link href='/Profile' onClick={handleProfile}  className='logged-in modal-trigger' >Profile</Nav.Link>
+            <Nav.Link href='/Profile' >Profile</Nav.Link>
             <Nav.Link href='/Home' className='logged-in ' id='logout'>Log out</Nav.Link>
-
+              
             <Nav.Link className='logged-out modal-trigger' data-target="modal-login">
               <button onClick={handleLogin} className="text-btn">
                 Log in

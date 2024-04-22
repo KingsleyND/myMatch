@@ -12,11 +12,11 @@ export default function Modal(){
   const [action, setAction] = useState("Sign Up")
   const emailRef = useRef()
   const passwordRef = useRef()
-  const {signup, currentUser} = useAuth()
+  const {signup , login} = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(e){
+  async function handleSignUpSubmit(e){
     e.preventDefault()
    
     // if(passwordRef.current.value !== passwordConfirmRef.current.value){
@@ -28,7 +28,29 @@ console.log("emailRef.current.value: ", emailRef.current.value)
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
     }catch{
-      setError("Failed to create an account")
+      setError("Failed to create an account :(")
+    }
+    setLoading(false)
+
+
+    
+    // setAction("Sign Up")
+    setIsModalActive(true)
+  }
+
+  async function handleLoginSubmit(e){
+    e.preventDefault()
+   
+    // if(passwordRef.current.value !== passwordConfirmRef.current.value){
+    //   return  setError("passwords do not match")
+    // }
+console.log("emailRef.current.value: ", emailRef.current.value)
+    try{
+      setError("")
+      setLoading(true)
+      await login(emailRef.current.value, passwordRef.current.value)
+    }catch{
+      setError("Failed to Sign in :(")
     }
     setLoading(false)
 
@@ -74,8 +96,10 @@ console.log("emailRef.current.value: ", emailRef.current.value)
                     <div className="logContainer" id="logContainer">
       <div className="logHeader">
         <div className="logText">Log in</div>
+        {error && <Alert variant="danger">{error}</Alert>}
         <div className="underline"></div>
       </div>
+      <form id="signup-form" onSubmit={handleLoginSubmit}>
       <div className="logInputs">
         {/* {action ==="Log in"? <></>:
         <div className="logInput">
@@ -85,17 +109,17 @@ console.log("emailRef.current.value: ", emailRef.current.value)
           } */}
 
 
-          <form id="login-form">
+          
           <div className="logInput">
             <img src={emailIcon} alt="" />
-            <input type="email" id="login-email" placeholder="email" required />
+            <input type="email" id="login-email" ref={emailRef} placeholder="email" required />
           </div>
           
           <div className="logInput">
             <img src={passwordIcon} alt="" />
-            <input type="password" id="login-password" placeholder="password" required />
+            <input type="password" id="login-password" ref={passwordRef}  placeholder="password"  required />
           </div>
-          </form>
+          
       </div>
       
       {action ==="Log In"? <></>:
@@ -108,10 +132,11 @@ console.log("emailRef.current.value: ", emailRef.current.value)
             Sign Up
           </div> */}
           {/* onClick={handleLogin} */}
-          <button className="logSubmit" >
+          <button  disabled={loading} className="logSubmit"  type="submit">
             Log in.
           </button>
       </div>
+      </form>
     </div>
                      </div> 
                 : caller === "signup" ? 
@@ -119,14 +144,14 @@ console.log("emailRef.current.value: ", emailRef.current.value)
                     <div className="logContainer" id="logContainer">
       <div className="logHeader">
         <div className="logText">SIgn up</div>
-        {currentUser && currentUser.email}
-        {console.log(currentUser)}
+        {/* {currentUser.email} */}
+        {/* {console.log(currentUser)} */}
         {error && <Alert variant="danger">{error}</Alert>}
         <div className="underline"></div>
       </div>
 {/* SIGN UP   -------- */}
 
-      <form id="signup-form" onSubmit={handleSubmit}>
+      <form id="signup-form" onSubmit={handleSignUpSubmit}>
       <div className="logInputs">
         {action ==="Log in"? <></>:
         <div className="logInput">

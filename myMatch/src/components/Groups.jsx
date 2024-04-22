@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 
-export class Groups extends Component {
-  render() {
-    return (
-      <div>
+
+export default function Groups() {
+  return (
+    <div>
         <h1>Groups</h1>
+        
       </div>
-    )
-  }
+  )
 }
-
-export default Groups;
-
-

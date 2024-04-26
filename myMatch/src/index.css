@@ -185,7 +185,7 @@ button:focus-visible {
   margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%; 
 }
 
 /* Close Button */
@@ -207,6 +207,26 @@ button:focus-visible {
 .text-btn{
   background-color: inherit;
 }
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+}
+.findMatchButton{
+  background-color: #747bff;
+  color: white;
+  height: 7vh;
+  width: 20vw;
+}
+.showcaseContainer {
+  display: flex;
+  justify-content: center;
+}
+.showcaseContainer h3{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
 
 
 

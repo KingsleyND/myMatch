@@ -1,5 +1,12 @@
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+
+
+
+
+
 
 const app = firebase.initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,

@@ -1,8 +1,5 @@
 
 
-
-
-
 export const findBestMatch = (users) => {
   let bestMatch1 = null;
   let bestMatch2 = null;
@@ -21,8 +18,8 @@ export const findBestMatch = (users) => {
       
         if (score > bestScore) {
           bestScore = score;
-          bestMatch1 = user1;
-          bestMatch2 = user2;
+          bestMatch1 = {...user1 ,name: username1 };
+          bestMatch2 = {...user2 ,name: username2};;
         }
       }
     }
@@ -32,7 +29,12 @@ export const findBestMatch = (users) => {
   return { first: bestMatch1, Second: bestMatch2, score: bestScore };
 };
 
-console.log(findBestMatch(users));
+// console.log(findBestMatch(users));
+
+
+
+
+
 function calculateGameModeScore(mode1, mode2) {
   if (mode1 === mode2) {
     return 40;

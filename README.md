@@ -20,3 +20,7 @@ Production Deployment: I'll also boot up the live production link. Test cases w
 * Do you see any impediments to you or the Development Team meeting the Sprint Goals? What are the obstacles? What is your hindrance removal plan?
 CI System Issues: The continuous integration (CI) system may cause problems because of to its setup or configuration. This could cause delays in deployment or integration.
 Impediment Removal Plan: To address this, I plan to use GitLab for CI/CD, resulting in smoother integration and deployment. This strategy should assist handle any CI difficulties and keep the sprint on track.
+
+#### Sprint 3
+22 story points were completed during this sprint. While previous sprints focused on front-end development and user authentication, Sprint #3 primarily addressed the implementation of the algorithm and data manipulation from Cloud Firestore. This required a significant amount of backend work, with a focus on ensuring data integrity and optimizing the retrieval of information from the cloud database.
+Looking ahead, the front-end has to be polished more to improve the user experience and make the UI more intuitive. More improvements are planned to improve software functionality. Future work will focus on polishing the UI/UX, adding on the software's capabilities and adding personalization elements.

@@ -32,7 +32,7 @@ console.log(match)
         </div>
 
         <div className="showcaseContainer">
-          <h3>Best Match</h3>
+          
           <div className="user1Stats">
             <h2 className="name" id="user1Name">
               User1
@@ -48,7 +48,9 @@ console.log(match)
                       communication: <span id="player1com">{match?.first?.preferences?.communication}</span>
                     </li>
                     <li>
-                      Playstyle: <span id="player1PS">DPS</span>
+                      
+                      Playstyle: <span id="player1PS">{match?.first?.preferences?.playstyle
+}</span>
                     </li>
                   </ul>
                 </li>
@@ -56,13 +58,16 @@ console.log(match)
                   Attributes
                   <ul>
                     <li>
-                      Sportsmanship: <span id="player1SMS">⭐⭐⭐⭐</span>
+                      Sportsmanship: <span id="player1SMS">{match?.first?.Attributes?.sportsmanship}
+</span>
                     </li>
                     <li>
-                      Network: <span id="player1NTW">80ms</span>
+                      Network: <span id="player1NTW">{match?.first?.Attributes?.Network}
+</span>
                     </li>
                     <li>
-                      Toxicity: <span id="player1TX">25%</span>
+                      Toxicity: <span id="player1TX">{match?.first?.Attributes?.toxicity}
+</span>
                     </li>
                   </ul>
                 </li>
@@ -70,16 +75,23 @@ console.log(match)
                   Skill
                   <ul>
                     <li>
-                      Rank: <span id="player1RK">mic</span>
+                      Rank: <span id="player1RK">{match?.first?.Skill?.Rank}
+</span>
                     </li>
                     <li>
-                      Level: <span id="player1LVL">20</span>
+                      Level: <span id="player1LVL">{match?.first?.Skill?.Level}
+</span>
                     </li>
                   </ul>
                 </li>
                 <li>
                   Favorite game mode:{" "}
-                  <span id="Player1FGM">Team death match</span>
+                  <span id="Player1FGM">{match?.first?.favoriteGameMode}
+
+
+
+
+</span>
                 </li>
               </ul>
             </div>
@@ -96,10 +108,12 @@ console.log(match)
                   Preferences
                   <ul>
                     <li>
-                      communication: <span id="player2COM">mic</span>
+                      communication: <span id="player2COM">{match?.Second?.preferences?.communication}
+</span>
                     </li>
                     <li>
-                      Playstyle: <span id="player2PS">DPS</span>
+                      Playstyle: <span id="player2PS">{match?.Second?.preferences?.playstyle}
+</span>
                     </li>
                   </ul>
                 </li>
@@ -107,13 +121,16 @@ console.log(match)
                   Attributes
                   <ul>
                     <li>
-                      Sportsmanship: <span id="player2SMS">⭐⭐⭐⭐</span>
+                      Sportsmanship: <span id="player2SMS">{match?.Second?.Attributes?.sportsmanship}
+</span>
                     </li>
                     <li>
-                      Network: <span id="player2NTW">80ms</span>
+                      Network: <span id="player2NTW">{match?.Second?.Attributes?.Network}
+</span>
                     </li>
                     <li>
-                      Toxicity: <span id="Player2TX">25%</span>
+                      Toxicity: <span id="Player2TX">{match?.Second?.Attributes?.toxicity}
+</span>
                     </li>
                   </ul>
                 </li>
@@ -121,16 +138,17 @@ console.log(match)
                   Skill
                   <ul>
                     <li>
-                      Rank: <span id="Player2RK">Gold</span>
+                      Rank: <span id="Player2RK">{match?.Second?.Skill?.Rank}</span>
                     </li>
                     <li>
-                      Level: <span id="Player2LVL">20</span>
+                      Level: <span id="Player2LVL">{match?.Second?.Skill?.Level}
+</span>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Favorite game mode:{" "}
-                  <span id="Player2FGM">Team death match</span>
+                  Favorite game mode: 
+                  <span id="Player2FGM">{match?.Second?.favoriteGameMode}</span>
                 </li>
               </ul>
             </div>

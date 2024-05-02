@@ -217,9 +217,15 @@ button:focus-visible {
   height: 7vh;
   width: 20vw;
 }
+
+
+
+
 .showcaseContainer {
   display: flex;
   justify-content: center;
+  border: #1a1a1a solid 1px;
+  height: 70vh;
 }
 .showcaseContainer h3{
   display: flex;
@@ -227,8 +233,43 @@ button:focus-visible {
   margin-top: 5vh;
 }
 
+.user1Stats{
+  margin-top: 5vh;
+  border: #eb910b solid 1px;
+  border-radius: 10px;
+  height: fit-content;
+  margin-right: 5%;
+  padding: 1%;
+  font-size: 1.6rem; 
+}
+.user1Stats h2{
+  display: flex;
+  justify-content: center;
+}
+.user1Stats span{
+  font-size: 1.2rem;
+  color: #b645e2;
+}
 
+.user2Stats{
+  margin-top: 5vh;
+  border: #eb910b solid 1px;
+  border-radius: 10px;
+  height: fit-content;
+  margin-left: 5%;
+  padding: 1%;
+  font-size: 1.6rem;
+}
 
+.user2Stats h2{
+  display: flex;
+  justify-content: center;
+  font-style: bold;
+}
+.user2Stats span{ 
+  font-size: 1.2rem;
+  color: #b645e2;
+}
 
 
 

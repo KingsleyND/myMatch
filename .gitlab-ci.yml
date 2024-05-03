@@ -1,0 +1,17 @@
+stages:
+  - build
+  # - deploy
+
+build:
+  stage: build
+  image: node:latest
+  script:
+    - echo "Building your application..."
+    - npm install
+    - npm run build
+    
+
+# deploy:
+#   stage: deploy
+#   script:
+#     - echo "Deploying your application..."

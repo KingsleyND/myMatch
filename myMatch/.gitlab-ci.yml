@@ -2,4 +2,4 @@ build project:
   image: node:latest
   script:
     - npm install
-    - npm build
+    - npm run build

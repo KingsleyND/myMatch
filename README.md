@@ -1,4 +1,18 @@
-# myMatch
+# 🎮 myMatch – Scalable Matchmaking System for Multiplayer Games
+
+myMatch is a **matchmaking web service** designed for competitive and casual multiplayer games.  
+It provides developers a robust backend for **player matching, session orchestration, and competitive balancing**, enabling fair and engaging gameplay. Designed as a **plug-and-play service**, could be integrated into a game or platform, giving developers the tools to scale their matchmaking system without reinventing the wheel. with a scalable backend system for **player matching, session management, and integration into existing game ecosystems**.
+
+## 🚀 Core Capabilities
+- **Advanced Matchmaking Algorithms** – balances skill levels, latency, and fairness in real-time  
+- **Web Service Architecture** – designed for integration into third-party games and platforms  
+- **Extensibility** – modular design for plugging in custom rules or ranking systems  
+
+## 🛠️ Tech Stack
+- **Backend:** JavaScript (Node.js)  
+- **Demo Deployment:** Vercel  
+---
+# Project Management details
 
 ### Project Kanban board link:
 https://kingsley34.atlassian.net/jira/software/projects/MYM/boards/2?atlOrigin=eyJpIjoiZWNkODYyODZkNWU5NGI3NmFmMTVlNGFjNTEyNGY5OTAiLCJwIjoiaiJ9
